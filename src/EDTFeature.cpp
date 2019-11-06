@@ -15,8 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "EDTFeature.h"
+#include <EDTFeature.h>
 using rimg::EDTFeature;
+using rimg::byte;
 
 
 EDTFeature::EDTFeature( const cv::Mat_<byte> img, const cv::Size fvDims)

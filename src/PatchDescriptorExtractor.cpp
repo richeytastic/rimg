@@ -78,7 +78,7 @@ PatchDescriptorExtractor::~PatchDescriptorExtractor()
 
 
 // public
-void PatchDescriptorExtractor::addFX( const FX& fx)
+void PatchDescriptorExtractor::addFX( const rimg::FX& fx)
 {
     // fx must be pre-processed on an input image already!
     if ( !fx->isPreProcessed())

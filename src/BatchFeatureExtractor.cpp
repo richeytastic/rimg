@@ -15,12 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "BatchFeatureExtractor.h"
-using rimg::BatchFeatureExtractor;
-using rimg::FeatureExtractor;
+#include <BatchFeatureExtractor.h>
 #include <iostream>
 #include <algorithm>
 #include <cassert>
+using rimg::BatchFeatureExtractor;
+using rimg::FeatureExtractor;
+
 
 void checkExtractCtor( const FeatureExtractor::Ptr fx, const std::vector<cv::Mat>& extracts)
 {
@@ -34,7 +35,7 @@ void checkExtractCtor( const FeatureExtractor::Ptr fx, const std::vector<cv::Mat
 
 
 BatchFeatureExtractor::BatchFeatureExtractor( FeatureExtractor::Ptr fx, const std::vector<cv::Mat>& extracts, double scaleFactor)
-    : _fx(fx), _scaleFactor(scaleFactor), _extracts(&extracts), _rextracts(NULL), _msecs(0)
+    : _fx(fx), _scaleFactor(scaleFactor), _extracts(&extracts), _rextracts(nullptr), _msecs(0)
 {
     checkExtractCtor( fx, extracts);
 }  // end ctor
@@ -51,15 +52,15 @@ void checkRectCtor( const FeatureExtractor::Ptr fx, const cv::Mat& img)
 }   // end checkRectCtor
 
 
-BatchFeatureExtractor::BatchFeatureExtractor( FeatureExtractor::Ptr fx, const cv::Mat& img, const vector<cv::Rect>& rextracts, double sf)
-    : _fx(), _scaleFactor(sf), _extracts(NULL), _rextracts(&rextracts), _msecs(0)
+BatchFeatureExtractor::BatchFeatureExtractor( FeatureExtractor::Ptr fx, const cv::Mat& img, const std::vector<cv::Rect>& rextracts, double sf)
+    : _fx(), _scaleFactor(sf), _extracts(nullptr), _rextracts(&rextracts), _msecs(0)
 {
     checkRectCtor( fx, img);
     const cv::Size newSz( int(img.cols * sf), int(img.rows * sf));  // Floors dims
     cv::Mat inm;
     cv::resize( img, inm, newSz);
     _fx = fx->preProcess(inm);
-    assert( _fx != NULL);
+    assert( _fx != nullptr);
 }   // end ctor
 
 

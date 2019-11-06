@@ -15,8 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "KeypointsDetector.h"
-using namespace rimg;
+#include <KeypointsDetector.h>
+using rimg::KeypointsDetector;
+using rimg::Keypoints;
 
 
 KeypointsDetector::KeypointsDetector( const cv::Mat &img)

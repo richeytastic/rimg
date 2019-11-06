@@ -15,12 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "FeatureLibrary.h"
-using rimg::FeatureLibrary;
-#include "ImageType.h"
+#include <FeatureLibrary.h>
+#include <ImageType.h>
+#include <iostream>
 #include <algorithm>
 #include <cassert>
 #include <fstream>
+using rimg::FeatureLibrary;
 
 
 FeatureLibrary::Ptr FeatureLibrary::S_singleton;    // Static singleton
@@ -114,7 +115,7 @@ size_t FeatureLibrary::build( const vector<string>& fxspecs, vector<FX>& fxs) co
 
 
 
-size_t FeatureLibrary::build( istream& is, vector<FX>& fxs) const throw (ExtractorTypeException)
+size_t FeatureLibrary::build( std::istream& is, vector<FX>& fxs) const throw (ExtractorTypeException)
 {
     size_t fxcount = 0;
     string fxspec;

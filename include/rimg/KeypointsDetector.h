@@ -20,7 +20,6 @@
 
 #include "rimg.h"
 
-
 namespace rimg {
 
 class rimg_EXPORT KeypointsDetector

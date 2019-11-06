@@ -17,6 +17,7 @@
 
 #include <Histogram.h>
 using rimg::Histogram;
+using rimg::byte;
 
 
 void createCummulativeHistogram( const std::vector<int>& hist, std::vector<int>& chist)

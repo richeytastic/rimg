@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "HOGExtractor.h"
+#include <HOGExtractor.h>
 using rimg::HOGExtractor;
 //using rimg::HOG;
 #include <sstream>
@@ -48,7 +48,7 @@ HOGExtractor::~HOGExtractor()
 }   // end dtor
 
 
-void HOGExtractor::getValidImageTypes( vector<ImageType>& vimgTypes) const
+void HOGExtractor::getValidImageTypes( std::vector<ImageType>& vimgTypes) const
 {
     vimgTypes.push_back(BGR);
     vimgTypes.push_back(Grey);

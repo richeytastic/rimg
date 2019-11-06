@@ -24,11 +24,9 @@
 
 #include "rimg_Export.h"
 #include <opencv2/opencv.hpp>
-typedef unsigned char byte;
+namespace rimg {
 
-
-namespace rimg
-{
+using byte = unsigned char;
 
 class rimg_EXPORT DepthSegmenter
 {

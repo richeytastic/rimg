@@ -20,20 +20,19 @@
 
 #include "rimg.h"
 
-namespace rimg
-{
+namespace rimg {
 
 class rimg_EXPORT ColourDetector
 {
 public:
     ColourDetector();
-    ColourDetector( float minDist, uchar r, uchar g, uchar b);
+    ColourDetector( float minDist, byte r, byte g, byte b);
     ColourDetector( float minDist, const cv::Vec3b &targetCol);
 
     void setColourDistanceThreshold( float minDist);
     inline float getColourDistanceThreshold() const { return m_minDist;}
 
-    void setTargetColour( uchar red, uchar green, uchar blue);
+    void setTargetColour( byte red, byte green, byte blue);
     void setTargetColour( const cv::Vec3b &col);    // Col should be BGR ordered
     inline cv::Vec3b getTargetColour() const { return m_target;}
 

@@ -17,6 +17,7 @@
 
 #include <HoughCirclesOperator.h>
 using rimg::HoughCirclesOperator;
+using rimg::Circles;
 
 
 const int HoughCirclesOperator::ACC_RES = 1;

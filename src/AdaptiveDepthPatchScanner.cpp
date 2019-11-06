@@ -15,11 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "AdaptiveDepthPatchScanner.h"
+#include <AdaptiveDepthPatchScanner.h>
+#include <cassert>
 using rimg::AdaptiveDepthPatchScanner;
 using rimg::PatchProcessor;
 using rimg::PatchRanger;
-#include <cassert>
+using rimg::byte;
 
 
 AdaptiveDepthPatchScanner::AdaptiveDepthPatchScanner( const cv::Mat_<float> depthMap, const cv::Size2f& rps, PatchProcessor* px, int pxlStepSz)
@@ -184,7 +185,7 @@ float PatchRanger::calcPatchRect( int py, int px, const cv::Size2f& realSz, cv::
 
 
 
-float PatchRanger::calcQuadrilateral( const cv::Point& p, const cv::Size2f& realSz, vector<cv::Point>& quad) const
+float PatchRanger::calcQuadrilateral( const cv::Point& p, const cv::Size2f& realSz, std::vector<cv::Point>& quad) const
 {
     float d0 = 0;   // Depth at p
     float d1 = 0;   // Depth one pixel below p

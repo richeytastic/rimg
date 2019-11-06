@@ -15,11 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "DepthSegmenter.h"
-using rimg::DepthSegmenter;
+#include <DepthSegmenter.h>
 #include <cstdlib>
-#include <cmath>
 #include <vector>
+#include <cmath>
+using rimg::DepthSegmenter;
+using rimg::byte;
 
 
 DepthSegmenter::DepthSegmenter( const cv::Mat_<float> rngMat, int depthLevels, float inlierFactor, float minRng, float maxRng)

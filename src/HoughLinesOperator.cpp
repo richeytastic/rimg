@@ -15,8 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "HoughLinesOperator.h"
-using namespace rimg;
+#include <HoughLinesOperator.h>
+using rimg::HoughLinesOperator;
+using rimg::CannyOperator;
+using rimg::Lines;
 
 
 HoughLinesOperator::HoughLinesOperator( const CannyOperator &co, int minV, int minL, int maxG, int dr, double dt)

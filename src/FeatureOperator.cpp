@@ -15,12 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#include "FeatureOperator.h"
+#include <FeatureOperator.h>
 using rimg::FeatureOperator;
-#include <cassert>
-#include <iostream>
+using rimg::FeatureSizeException;
 using std::cerr;
 using std::endl;
+#include <cassert>
+#include <iostream>
 
 
 

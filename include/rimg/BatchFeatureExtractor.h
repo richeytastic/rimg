@@ -29,7 +29,7 @@
 #include <vector>
 #include <boost/thread.hpp>
 #include <boost/bind.hpp>
-#include <rlib/CpuTimer.h>   // rlib
+#include <rlib/CpuTimer.h>
 
 namespace rimg {
 

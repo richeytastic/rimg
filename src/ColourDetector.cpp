@@ -16,7 +16,8 @@
  ************************************************************************/
 
 #include <ColourDetector.h>
-using namespace rimg;
+using rimg::ColourDetector;
+using rimg::byte;
 
 
 ColourDetector::ColourDetector() : m_minDist(30), m_target(0,0,0)
@@ -24,7 +25,7 @@ ColourDetector::ColourDetector() : m_minDist(30), m_target(0,0,0)
 }   // end ctor
 
 
-ColourDetector::ColourDetector( float minDist, uchar r, uchar g, uchar b)
+ColourDetector::ColourDetector( float minDist, byte r, byte g, byte b)
 {
     setColourDistanceThreshold( minDist);
     setTargetColour( r, g, b);
@@ -48,7 +49,7 @@ void ColourDetector::setColourDistanceThreshold( float minDist)
 
 
 
-void ColourDetector::setTargetColour( uchar r, uchar g, uchar b)
+void ColourDetector::setTargetColour( byte r, byte g, byte b)
 {
     // Temporary 1-pixel image
     cv::Mat tmp(1,1,CV_8UC3);
@@ -85,7 +86,7 @@ cv::Mat ColourDetector::process( const cv::Mat &img)
 
     cv::Mat_<cv::Vec3b>::const_iterator it = m_converted.begin<cv::Vec3b>();
     cv::Mat_<cv::Vec3b>::const_iterator itend = m_converted.end<cv::Vec3b>();
-    cv::Mat_<uchar>::iterator itout = m_result.begin<uchar>();
+    cv::Mat_<byte>::iterator itout = m_result.begin<byte>();
 
     for ( ; it != itend; ++it, ++itout)
     {

@@ -172,7 +172,7 @@ GradientExtractor::GradientExtractor()
 
 
 
-void GradientExtractor::getValidImageTypes( vector<ImageType>& vimgTypes) const
+void GradientExtractor::getValidImageTypes( std::vector<ImageType>& vimgTypes) const
 {
     vimgTypes.push_back(BGR);   // Triple channel
     vimgTypes.push_back(Depth);

@@ -41,7 +41,6 @@ namespace rlib{ class Random;}
 
 namespace rimg {
 
-using uchar = unsigned char;
 using byte = unsigned char;
 
 using std::ostream;
