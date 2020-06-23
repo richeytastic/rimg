@@ -19,11 +19,9 @@
 #define rimg_IMAGE_PROCESS_H
 
 #include <opencv2/opencv.hpp>
-typedef unsigned char byte;
 #include "rimg_Export.h"
 
-namespace rimg
-{
+namespace rimg {
 
 // Swap the left and right most end bytes of each pixel in the provided image.
 // Returns image out for convenience.
