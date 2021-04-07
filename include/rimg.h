@@ -60,6 +60,7 @@ using byte = unsigned char;
 #include "rimg/CannyOperator.h"
 #include "rimg/CircleDiff.h"
 #include "rimg/CircleDiffExtractor.h"
+#include "rimg/Colour.h"
 #include "rimg/ColourDetector.h"
 #include "rimg/ConnectedComponents.h"
 #include "rimg/ContentFinder.h"

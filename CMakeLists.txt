@@ -22,6 +22,7 @@ set( INCLUDE_FILES
     "${INCLUDE_F}/CannyOperator.h"
     "${INCLUDE_F}/CircleDiff.h"
     "${INCLUDE_F}/CircleDiffExtractor.h"
+    "${INCLUDE_F}/Colour.h"
     "${INCLUDE_F}/ColourDetector.h"
     "${INCLUDE_F}/ConnectedComponents.h"
     "${INCLUDE_F}/ContentFinder.h"
@@ -136,6 +137,7 @@ set( SRC_FILES
     ${SRC_DIR}/CannyOperator
     ${SRC_DIR}/CircleDiff
     ${SRC_DIR}/CircleDiffExtractor
+    ${SRC_DIR}/Colour
     ${SRC_DIR}/ColourDetector
     ${SRC_DIR}/ConnectedComponents
     ${SRC_DIR}/ContentFinder
