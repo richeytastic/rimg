@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,24 +60,24 @@ public:
     // feature extractors when one wishes to control for extract dimensions.
     // Setting fixed dimensions may significantly slow down feature extractor processing.
     // Throws FeatureSizeException if fixedDims are smaller than the minimum sampling dimensions.
-    void setFixedExtractSize( const cv::Size& fixedDims) throw (ImageSizeException);
+    void setFixedExtractSize( const cv::Size& fixedDims);
 
     // Whether or not setFixedExtractDims has been set, extract from rct resized first it to the given dims.
-    cv::Mat_<float> extract( const cv::Rect rct, const cv::Size& fixedDims) const throw (ImageSizeException);
+    cv::Mat_<float> extract( const cv::Rect rct, const cv::Size& fixedDims) const;
 
     // Extract the feature vector over the given rectangular patch (for pre-processed feature extractors).
-    cv::Mat_<float> extract( const cv::Rect rct) const throw (ImageSizeException);
+    cv::Mat_<float> extract( const cv::Rect rct) const;
 
     // Extract the feature vector for the whole image.
     cv::Mat_<float> extract() const;
 
     // Convenience function - will throw if ex is the wrong type of image for the feature extractor.
-    cv::Mat_<float> extract( const cv::Mat& ex) const throw (ExtractorTypeException, ImageTypeException);
+    cv::Mat_<float> extract( const cv::Mat& ex) const;
 
 
     // Do the necessary feature pre-processing on the given image or view, returning the feature extractor object.
     // The type of image provided in the first version of this function must match the already set image type!
-    FeatureExtractor::Ptr preProcess( const cv::Mat img) const throw (ExtractorTypeException, ImageTypeException);
+    FeatureExtractor::Ptr preProcess( const cv::Mat img) const;
 
     // Gets the minimum size over which a feature can be extracted (e.g. 16x16 pixels)
     virtual cv::Size getMinSamplingDims() const;
@@ -89,7 +89,7 @@ public:
     const cv::Size& getFixedExtractSize() const;    // Returns cv::Size(0,0) if not fixed
 
     // Create a new feature extractor of the child type from the given parameters
-    FeatureExtractor::Ptr createNew( const std::string& params) const throw (ExtractorTypeException);
+    FeatureExtractor::Ptr createNew( const std::string& params) const;
 
     // Returns a string that can be used to construct this feature extractor type.
     std::string getConstructString() const;

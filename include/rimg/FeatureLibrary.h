@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -66,13 +66,13 @@ public:
     void registerFX( FX); // Register a feature extractor that can be built by this factory class
 
     // Build a single feature extractor
-    FX build( const string& fxspec) const throw (ExtractorTypeException);
+    FX build( const string& fxspec) const;
 
     // Build several (store in fxs) and return number constructed.
-    size_t build( const vector<string>& fxspecs, vector<FX>& fxs) const throw (ExtractorTypeException);
+    size_t build( const vector<string>& fxspecs, vector<FX>& fxs) const;
 
     // Build from input stream
-    size_t build( istream&, vector<FX>& fxs) const throw (ExtractorTypeException);
+    size_t build( istream&, vector<FX>& fxs) const;
 
 private:
     unordered_map<string, FX> _fxMap;  // Registered FXs

@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class rimg_EXPORT DescriptorStatistics
 public:
     // Add a new descriptor - returns number added so far. All added
     // descriptors must be of the same length or exception is thrown.
-    int add( const cv::Mat& descriptor) throw (DescriptorLengthException);
+    int add( const cv::Mat& descriptor);
 
 private:
     cv::Mat _vecs;

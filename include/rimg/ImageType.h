@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,11 +42,11 @@ rimg_EXPORT int getConvertibleImageTypes( int cvImgType/*from img.type()*/, std:
 rimg_EXPORT bool checkFXImageTypeMismatch( const FeatureExtractor* fx, const cv::Mat img);
 rimg_EXPORT bool checkFXImageTypeMismatch( const FeatureExtractor::Ptr fx, const cv::Mat img);
 
-rimg_EXPORT cv::Mat createImageType( ImageType, cv::Mat img) throw (ImageTypeException);
+rimg_EXPORT cv::Mat createImageType( ImageType, cv::Mat img);
 
-rimg_EXPORT ImageType parseImageType( std::istream& ss) throw (ImageTypeException);
+rimg_EXPORT ImageType parseImageType( std::istream& ss);
 
-rimg_EXPORT std::string toString( ImageType imgType) throw (ImageTypeException);
+rimg_EXPORT std::string toString( ImageType imgType);
 
 }   // end namespace
 

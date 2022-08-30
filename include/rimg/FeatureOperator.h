@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ public:
     // a 2D size for the feature vector is provided).
     // THROWS FeatureSizeException if imgSz is too small for the fvDims.
     // (fvDims.width <= imgSz.width && fvDims.height <= imgSz.height must be true)
-    FeatureOperator( const cv::Size& imgSz, const cv::Size fvDims=cv::Size(0,0)) throw (FeatureSizeException);
+    FeatureOperator( const cv::Size& imgSz, const cv::Size fvDims=cv::Size(0,0));
     virtual ~FeatureOperator(){}
 
     cv::Mat_<float> operator()() const;   // Extract from whole "image"

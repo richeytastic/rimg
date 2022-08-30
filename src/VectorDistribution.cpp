@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,14 +52,14 @@ cv::Mat_<float> formatCvVec( const cv::Mat_<float>& vec, int vlen)
 }   // end formatCvVec
 
 
-void VectorDistribution::addVector( const cv::Mat_<float>& vec) throw (VectorLengthException)
+void VectorDistribution::addVector( const cv::Mat_<float>& vec)
 {
     const cv::Mat_<float> v = formatCvVec( vec, _vlen);
     addVector( v.ptr<float>(0));
 }   // end addVector
 
 
-void VectorDistribution::addVector( const vector<float>& vec) throw (VectorLengthException)
+void VectorDistribution::addVector( const vector<float>& vec)
 {
     if ( vec.size() != (size_t)_vlen)
         throw VectorLengthException( "VectorDistribution::addVector: invalid vector length!");
@@ -67,14 +67,14 @@ void VectorDistribution::addVector( const vector<float>& vec) throw (VectorLengt
 }   // end addVector
 
 
-void VectorDistribution::getLikelihood( const cv::Mat_<float>& vec, float* lhoods) throw (VectorLengthException)
+void VectorDistribution::getLikelihood( const cv::Mat_<float>& vec, float* lhoods)
 {
     const cv::Mat_<float> v = formatCvVec( vec, _vlen);
     getLikelihood( v.ptr<float>(0), lhoods);
 }   // end getLikelihood
 
 
-void VectorDistribution::getLikelihood( const vector<float>& vec, float* lhoods) throw (VectorLengthException)
+void VectorDistribution::getLikelihood( const vector<float>& vec, float* lhoods)
 {
     if ( vec.size() != (size_t)_vlen)
         throw VectorLengthException( "VectorDistribution::addVector: invalid vector length!");

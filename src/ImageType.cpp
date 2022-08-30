@@ -129,7 +129,7 @@ cv::Mat rimg::createImageType( ImageType imgType, const View::Ptr v, cv::Rect rc
 
 
 
-cv::Mat rimg::createImageType( ImageType imgType, cv::Mat img) throw (ImageTypeException)
+cv::Mat rimg::createImageType( ImageType imgType, cv::Mat img)
 {
     cv::Mat m;
     cv::Mat_<cv::Vec3f> tmp;    // for cielab
@@ -180,7 +180,7 @@ cv::Mat rimg::createImageType( ImageType imgType, cv::Mat img) throw (ImageTypeE
 
 
 
-ImageType rimg::parseImageType( std::istream& ss) throw (ImageTypeException)
+ImageType rimg::parseImageType( std::istream& ss)
 {
     std::string stype;
     ss >> stype;
@@ -207,7 +207,7 @@ ImageType rimg::parseImageType( std::istream& ss) throw (ImageTypeException)
 
 
 
-std::string rimg::toString( ImageType imgType) throw (ImageTypeException)
+std::string rimg::toString( ImageType imgType)
 {
     std::string s;
 

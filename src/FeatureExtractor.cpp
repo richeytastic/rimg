@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ ImageType FeatureExtractor::getImageType() const
 const cv::Mat& FeatureExtractor::getRawImage() const { return _rawImg;}
 
 
-void FeatureExtractor::setFixedExtractSize( const cv::Size& fixedDims) throw (rimg::ImageSizeException)
+void FeatureExtractor::setFixedExtractSize( const cv::Size& fixedDims)
 {
     const cv::Size& minDims = this->getMinSamplingDims();
     if ( fixedDims.width < minDims.width || fixedDims.height < minDims.height)
@@ -68,7 +68,7 @@ void FeatureExtractor::setFixedExtractSize( const cv::Size& fixedDims) throw (ri
 
 const cv::Size& FeatureExtractor::getFixedExtractSize() const { return _fixedDims;}
 
-cv::Mat_<float> FeatureExtractor::extract( const cv::Rect rct, const cv::Size& fixedDims) const throw (rimg::ImageSizeException)
+cv::Mat_<float> FeatureExtractor::extract( const cv::Rect rct, const cv::Size& fixedDims) const
 {
 #ifndef NDEBUG
     std::cerr << "Processing rct at fixed resolution" << std::endl;
@@ -87,7 +87,7 @@ cv::Mat_<float> FeatureExtractor::extract( const cv::Rect rct, const cv::Size& f
 }   // end extract
 
 
-cv::Mat_<float> FeatureExtractor::extract( const cv::Rect rct) const throw (rimg::ImageSizeException)
+cv::Mat_<float> FeatureExtractor::extract( const cv::Rect rct) const
 {
     assert( !_rawImg.empty());
     assert( rimg::isContained( _rawImg, rct));
@@ -110,14 +110,14 @@ cv::Mat_<float> FeatureExtractor::extract() const
 }   // end extract
 
 
-cv::Mat_<float> FeatureExtractor::extract( const cv::Mat& ex) const throw (ExtractorTypeException, ImageTypeException)
+cv::Mat_<float> FeatureExtractor::extract( const cv::Mat& ex) const
 {
     const FeatureExtractor::Ptr fx = preProcess(ex);    // Will throw if this feature extractor doesn't have the right image type set
     return fx->extract();
 }   // end extract
 
 
-FeatureExtractor::Ptr FeatureExtractor::createNew( const std::string& params) const throw (ExtractorTypeException)
+FeatureExtractor::Ptr FeatureExtractor::createNew( const std::string& params) const
 {
     if ( !_imgTypeSet)
         throw ExtractorTypeException( "[EXCEPTION] FeatureExtractor::createNew: Must set image type before constructing new feature!");
@@ -131,7 +131,7 @@ FeatureExtractor::Ptr FeatureExtractor::createNew( const std::string& params) co
 }   // end createNew
 
 
-FeatureExtractor::Ptr FeatureExtractor::preProcess( const cv::Mat img) const throw (ExtractorTypeException, ImageTypeException)
+FeatureExtractor::Ptr FeatureExtractor::preProcess( const cv::Mat img) const
 {
     if ( !_imgTypeSet)
         throw ExtractorTypeException( "[EXCEPTION] FeatureExtractor::preProcess: No ImageType yet set in " + getTypeString() + " extractor!");

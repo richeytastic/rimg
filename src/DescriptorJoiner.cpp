@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 using rimg::DescriptorJoiner;
 
 
-cv::Mat_<float> DescriptorJoiner::loadDescriptors( const string& dfile, int* label) throw (DescriptorLengthException)
+cv::Mat_<float> DescriptorJoiner::loadDescriptors( const string& dfile, int* label)
 {
     const cv::Mat_<float> vecs = rimg::readDescriptors( dfile, false);
     const int numVecs = vecs.rows;

@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2019 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -333,7 +333,7 @@ rimg_EXPORT int writeDescriptor( ostream& os, const cv::Mat& descriptor);
 // the number of columns being equal to the number of descriptors read in,
 // or as row vectors with the number of columns being equal to the length of
 // the feature vectors and the number of rows equalling the number of descriptors read in.
-rimg_EXPORT cv::Mat_<float> readDescriptors( const string fname, bool asCols=true) throw (DescriptorLengthException);
+rimg_EXPORT cv::Mat_<float> readDescriptors( const string fname, bool asCols=true);
 
 // Read in a single descriptor as a column or row vector.
 rimg_EXPORT cv::Mat_<float> readDescriptor( istream& is, bool asCol=true);

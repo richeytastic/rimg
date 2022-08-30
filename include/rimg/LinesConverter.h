@@ -45,8 +45,7 @@ private:
 class rimg_EXPORT LinesConverter
 {
 public:
-    LinesConverter( const Lines &lns, const cv::Mat &rngData, float minLen, float focLen)
-        throw (InvalidImageException);
+    LinesConverter( const Lines &lns, const cv::Mat &rngData, float minLen, float focLen);
 
     // Converts the provided 2D lines into 3D lines using the provided range data
     // (which should be of type CV_32FC1 i.e. single channel floating point).

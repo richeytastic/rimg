@@ -142,8 +142,9 @@ cv::Vec3b LocalBinaryPattern::extractBinaryPattern( const cv::Rect& rct) const
 cv::Mat_<float> LocalBinaryPattern::extract( const cv::Rect& rct) const
 {
     const cv::Vec3b fv = extractBinaryPattern(rct); // 3-bytes
+    const int v = static_cast<int>(fv[0]) << 16 | static_cast<int>(fv[1]) << 8 | static_cast<int>(fv[2]);
     cv::Mat_<float> fvm(1,1);
-    *fvm.ptr<float>() = *(float*)&fv[0];    // Cast to a single float (4-bytes) for return
+    *fvm.ptr<float>() = v;
     return fvm;
 }   // end extract
 

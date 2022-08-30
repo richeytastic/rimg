@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ public:
     // Returns the descriptors loaded from the file and if parameter
     // label is not null, sets this to be the label assigned to these
     // descriptors.
-    cv::Mat_<float> loadDescriptors( const string& dfile, int* label=NULL) throw (DescriptorLengthException);
+    cv::Mat_<float> loadDescriptors( const string& dfile, int* label=NULL);
 
     // Returns the number of classes loaded (number of times loadDescriptors was called).
     int getNumClasses() const;

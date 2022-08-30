@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,7 +59,7 @@ void FeatureLibrary::registerFX( FX fx)
 
 
 
-FX FeatureLibrary::build( const string& fxspec) const throw (ExtractorTypeException)
+FX FeatureLibrary::build( const string& fxspec) const
 {
     std::istringstream iss(fxspec);
     string fxType, paramStr;
@@ -98,7 +98,7 @@ FX FeatureLibrary::build( const string& fxspec) const throw (ExtractorTypeExcept
 
 
 
-size_t FeatureLibrary::build( const vector<string>& fxspecs, vector<FX>& fxs) const throw (ExtractorTypeException)
+size_t FeatureLibrary::build( const vector<string>& fxspecs, vector<FX>& fxs) const
 {
     size_t fxcount = 0;
     BOOST_FOREACH ( const string& fxspec, fxspecs)
@@ -115,7 +115,7 @@ size_t FeatureLibrary::build( const vector<string>& fxspecs, vector<FX>& fxs) co
 
 
 
-size_t FeatureLibrary::build( std::istream& is, vector<FX>& fxs) const throw (ExtractorTypeException)
+size_t FeatureLibrary::build( std::istream& is, vector<FX>& fxs) const
 {
     size_t fxcount = 0;
     string fxspec;

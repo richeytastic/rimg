@@ -67,13 +67,13 @@ ProHOG::ProHOG( const std::vector< cv::Mat_<double> >& pxlGds)  // Includes the 
 
 
 
-ProHOG::Ptr ProHOG::create( const cv::Mat &img, int nbs, bool dirDep) throw (ImageTypeException)
+ProHOG::Ptr ProHOG::create( const cv::Mat &img, int nbs, bool dirDep)
 {
     return boost::shared_ptr<ProHOG>( new ProHOG( img, nbs, dirDep));
 }   // end create
 
 
-ProHOG::ProHOG( const cv::Mat &img, int nbs, bool dirDep, const cv::Size cellDims) throw (ImageTypeException)
+ProHOG::ProHOG( const cv::Mat &img, int nbs, bool dirDep, const cv::Size cellDims)
     : FeatureOperator( img.size())
 {
     init( img, nbs, dirDep, cellDims);
@@ -132,7 +132,7 @@ void ProHOG::normaliseTargetCell( int y, int x, const double *cell, const cv::Ma
 
 
 
-cv::Mat ProHOG::createProHOG( const cv::Size cellDims, const cv::Rect r) const throw (ImageSizeException)
+cv::Mat ProHOG::createProHOG( const cv::Size cellDims, const cv::Rect r) const
 {
     cv::Rect rct = r;
     if ( rct.width <= 0 || rct.height <= 0)
@@ -230,7 +230,6 @@ cv::Mat_<float> ProHOG::extract( const cv::Rect &rct) const
 
 
 cv::Mat ProHOG::createVisualisation( const cv::Mat &phogs, const cv::Size &imgDims, double binRads)
-        throw (ImageSizeException)
 {
     cv::Mat pimg = cv::Mat::zeros( imgDims.height, imgDims.width, CV_16UC1); // Grey scale return image
 
@@ -357,7 +356,7 @@ int ProHOG::rows() const
 
 
 
-void ProHOG::init( const cv::Mat &img, int nbs, bool dirDep, const cv::Size cellDims) throw (ImageTypeException)
+void ProHOG::init( const cv::Mat &img, int nbs, bool dirDep, const cv::Size cellDims)
 {
     assert( nbs >= 2);
     assert( cellDims.width >= 1 && cellDims.height >= 1);

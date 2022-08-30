@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,6 @@ using rimg::Lines3d;
 
 
 LinesConverter::LinesConverter( const Lines &lns, const cv::Mat &ri, float ml, float fl)
-                                throw (InvalidImageException)
     : rngData(ri), lines(lns), minLen(ml), focLen(fl)
 {
     if ( ri.type() != CV_32FC1)

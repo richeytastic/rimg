@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  ************************************************************************/
 
-#pragma once
 #ifndef rimg_VECTOR_DISTRIBUTION_H
 #define rimg_VECTOR_DISTRIBUTION_H
 // Disable warnings about MSVC compiler not implementing exception specifications
@@ -39,15 +38,15 @@ public:
     // minVal, maxVal define a half open interval: [minVal, maxVal)
     VectorDistribution( int vlen, int nbins, float minVal, float maxVal);
 
-    void addVector( const cv::Mat_<float>& vec) throw (VectorLengthException);
-    void addVector( const vector<float>& vec) throw (VectorLengthException);
+    void addVector( const cv::Mat_<float>& vec);
+    void addVector( const vector<float>& vec);
 
     // Given a particular vector (vec), set array likelihoods with the independent
     // probabilities of the individual vector elements given the distribution generated
     // from the added vectors. Array likelihoods must have the same length as vec (and
     // as the generated distribution).
-    void getLikelihood( const cv::Mat_<float>& vec, float* likelihoods) throw (VectorLengthException);
-    void getLikelihood( const vector<float>& vec, float* likelihoods) throw (VectorLengthException);
+    void getLikelihood( const cv::Mat_<float>& vec, float* likelihoods);
+    void getLikelihood( const vector<float>& vec, float* likelihoods);
 
 private:
     const int _vlen;

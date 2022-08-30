@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ using std::endl;
 
 
 
-FeatureOperator::FeatureOperator( const cv::Size& sd, const cv::Size fvDims) throw (FeatureSizeException)
+FeatureOperator::FeatureOperator( const cv::Size& sd, const cv::Size fvDims)
     : _srcDims(0,0,sd.width,sd.height), _fvDims(fvDims)
 {
     if ( fvDims.height > sd.height || fvDims.width > sd.width)

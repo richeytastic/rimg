@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -99,8 +99,8 @@ public:
     // I.e. for N bins, there are 360/N degrees per bin (with default direction dependent contrast).
     // dirDep: if true (default), orientations depend on direction. If false, contrast direction
     // is ignored.
-    static Ptr create( const cv::Mat& img, int nbins=9, bool dirDep=true) throw (ImageTypeException);
-    ProHOG( const cv::Mat &img, int nbins=9, bool dirDep=true, const cv::Size cellDims=cv::Size(1,1)) throw (ImageTypeException);
+    static Ptr create( const cv::Mat& img, int nbins=9, bool dirDep=true);
+    ProHOG( const cv::Mat &img, int nbins=9, bool dirDep=true, const cv::Size cellDims=cv::Size(1,1));
 
     virtual ~ProHOG(){}
 
@@ -109,7 +109,7 @@ public:
     // Throws exception if requested rectangle dimensions are outside of image bounds or
     // if the rectangle width/height is less than the specified number of cells.
     // Type of returned matrix is CV_64FC(4*nbins_)
-    cv::Mat createProHOG( const cv::Size cellDims, const cv::Rect r=cv::Rect(0,0,0,0)) const throw (ImageSizeException);
+    cv::Mat createProHOG( const cv::Size cellDims, const cv::Rect r=cv::Rect(0,0,0,0)) const;
 
     // Set the cell dimensions to be used when calling operator() (default is 1 cell per pixel)
     void setCellDims( const cv::Size &cellDims);
@@ -120,7 +120,7 @@ public:
     // size of the provided Pro-HOG image (or exception is thrown).
     // Parameter binRads specifies the number of radians per histogram bin e.g.
     // for 9 bins over 360 this is 9^-1 * 2*pi. For 9 bins over 180 degrees it is 9^-1 * pi.
-    static cv::Mat createVisualisation( const cv::Mat &phogs, const cv::Size &imgDims, double perBinRads) throw (ImageSizeException);
+    static cv::Mat createVisualisation( const cv::Mat &phogs, const cv::Size &imgDims, double perBinRads);
 
     int rows() const;
     int cols() const;
@@ -141,7 +141,7 @@ private:
     void normaliseTargetCell( int y, int x, const double *cell, const cv::Mat &sumCells, cv::Mat &phogs) const;
 
     // Ctor helper
-    void init( const cv::Mat &img, int nbins, bool dirDep, const cv::Size cellDims) throw (ImageTypeException);
+    void init( const cv::Mat &img, int nbins, bool dirDep, const cv::Size cellDims);
 };  // end class
 
 }   // end namespace

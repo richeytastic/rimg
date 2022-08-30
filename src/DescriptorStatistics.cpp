@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2017 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ using rimg::DescriptorStatistics;
 
 
 
-int DescriptorStatistics::add( const cv::Mat& d) throw (DescriptorLengthException)
+int DescriptorStatistics::add( const cv::Mat& d)
 {
     const cv::Mat_<float> nd = rimg::modifyDescriptor( d, CV_32F);    // Single row vector
     if ( !_vecs.empty() && ( nd.cols != _vecs.cols))
