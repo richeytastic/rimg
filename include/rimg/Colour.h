@@ -1,5 +1,5 @@
 /************************************************************************
- * Copyright (C) 2021 Richard Palmer
+ * Copyright (C) 2022 Richard Palmer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 
 #include "rimg.h"
 #include <rlib/Random.h>
-#include <functional>
 #include <cstdlib>
 
 namespace rimg {
@@ -67,7 +66,7 @@ private:
     static rlib::Random s_rng;
 };  // end class
 
-struct rimg_EXPORT HashColour : std::unary_function<Colour, size_t> { size_t operator()( const Colour&) const;};
+struct rimg_EXPORT HashColour { size_t operator()( const Colour&) const;};
 
 }   // end namespace
 
